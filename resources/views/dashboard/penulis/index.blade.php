@@ -1,6 +1,17 @@
 @extends('layouts.dashboard_modul')
 @section('content')
 <div class="uk-card uk-margin" id="vue_component">
+    <div class="uk-card-body">
+        <div class="uk-child-width-1-3@m" >
+            
+        
+           
+             
+           
+        </div>
+    </div>
+</div>
+<div class="uk-card uk-margin" >
     <div class="uk-flex-middle sc-padding sc-padding-medium-ends uk-grid-small" data-uk-grid>
         <div class="uk-flex-1 uk-first-column">
             <h3 class="uk-card-title">&nbsp;&nbsp;&nbsp;List Penulis</h3>
@@ -169,7 +180,7 @@
         var table = $('.datatable').DataTable({
             // ordering: false,
             "columnDefs": [
-                            { "orderable": false, "targets": 1 },
+                            { "orderable": false, "targets": 2 },
                             
                             {
                                     "targets": '_all',        
@@ -179,6 +190,9 @@
             "processing": true,
             "ajax": url,
             "columns": [
+                    { 
+                        data: 'id',
+                    },
                     { 
                         data: 'nama',
                     },

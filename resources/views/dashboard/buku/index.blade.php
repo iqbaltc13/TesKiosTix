@@ -2,7 +2,7 @@
 @section('content')
 <div class="uk-card uk-margin" id="vue_component">
     <div class="uk-card-body">
-        <div class="uk-child-width-1-2@m" >
+        <div class="uk-child-width-1-3@m" >
             
             <select name="select-penulis" id="pilih-penulis" style="padding-left:10px;" class="uk-select" onchange="selectPenulis()"  >
                 <option value="">Semua Penulis</option>
@@ -10,7 +10,7 @@
                     <option value="{{$item->id}}">{{$item->nama}}</option> 
                 @endforeach
             </select>
-            <select name="select-kategori" id="pilih-kategori"  class="uk-select"  onchange="selectKategori()" style="display:none;">
+            <select name="select-kategori" id="pilih-kategori"  class="uk-select"  onchange="selectKategori()" >
                 <option value="">Semua Kategori</option>
                 @foreach($dataKategori as $item)
                     <option value="{{$item->id}}">{{$item->nama}}</option> 
@@ -232,7 +232,7 @@
         var table = $('.datatable').DataTable({
             // ordering: false,
             "columnDefs": [
-                            { "orderable": false, "targets": 4 },
+                            { "orderable": false, "targets": 5 },
                             
                             {
                                     "targets": '_all',        
@@ -242,6 +242,9 @@
             "processing": true,
             "ajax": url,
             "columns": [
+                    { 
+                        data: 'id',
+                    },
                     { 
                         data: 'judul',
                     },

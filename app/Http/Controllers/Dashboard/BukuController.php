@@ -40,14 +40,14 @@ class BukuController extends Controller
         return view($this->view.'index',$arrReturn);
     }
     public function datatable(Request $request){
-        $newObj      = new Kategori();
+        $newObj      = new Buku();
        
         $datas       = Buku::with($this->withArraySelect);
         if($request->penulis_id){
-            $datas = $datas->where('status_pemesanan_id',$request->status_pemesanan_id);
+            $datas = $datas->where('penulis_id',$request->penulis_id);
         }
         if($request->kategori_id){
-            $datas = $datas->where('toko_id',$request->toko_id);
+            $datas = $datas->where('kategori_id',$request->kategori_id);
         }
             
         $datas  = $datas->orderByRaw($newObj->getTable().".created_at DESC");  
