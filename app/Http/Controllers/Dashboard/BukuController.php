@@ -31,7 +31,12 @@ class BukuController extends Controller
         ];
     }
     public function index(){
-        $arrReturn=[];
+        $dataPenulis  = Penulis::with([])->get();
+        $dataKategori = Kategori::with([])->get();
+        $arrReturn=[
+            'dataPenulis'  => $dataPenulis,
+            'dataKategori' => $dataKategori,
+        ];
         return view($this->view.'index',$arrReturn);
     }
     public function datatable(Request $request){
@@ -55,8 +60,13 @@ class BukuController extends Controller
     public function edit($id, Request $request){
         $data       = Buku::with($this->withArraySelect)
                       ->where('id',$id)->first();
+        $dataPenulis  = Penulis::with([])->get();
+        $dataKategori = Kategori::with([])->get();
+        
         $arrReturn  = [
             'data' =>$data,
+            'dataPenulis'  => $dataPenulis,
+            'dataKategori' => $dataKategori,
         ];
         return view($this->view.'edit',$arrReturn);
     }
@@ -82,7 +92,11 @@ class BukuController extends Controller
         ->with('success', 'Sukses mengedit data buku');
     }
     public function create(Request $request){
-        $arrReturn  = [
+        $dataPenulis  = Penulis::with([])->get();
+        $dataKategori = Kategori::with([])->get();
+        $arrReturn=[
+            'dataPenulis'  => $dataPenulis,
+            'dataKategori' => $dataKategori,
         ];
                 
         return view($this->view.'create',$arrReturn);

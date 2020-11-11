@@ -90,7 +90,7 @@ Route::group(['middleware' => ['auth'] ], function() {
         });
         Route::group(['prefix' => 'buku','as'=>'dashboard.buku.'], function() {
             Route::get('index','BukuController@index')->name('index');
-            Route::get('data','BukuController@data')->name('data');
+            Route::get('datatable','BukuController@datatable')->name('datatable');
             Route::get('create','BukuController@create')->name('create');
             Route::get('edit/{id}','BukuController@edit')->name('edit');
             Route::delete('delete/{id}','BukuController@destroy')->name('destroy');  
@@ -102,7 +102,7 @@ Route::group(['middleware' => ['auth'] ], function() {
         });
         Route::group(['prefix' => 'kategori','as'=>'dashboard.kategori.'], function() {
             Route::get('index','KategoriController@index')->name('index');
-            Route::get('data','KategoriController@data')->name('data');
+            Route::get('datatable','KategoriController@datatable')->name('datatable');
             Route::get('create','KategoriController@create')->name('create');
             Route::get('edit/{id}','KategoriController@edit')->name('edit');
             Route::delete('delete/{id}','KategoriController@destroy')->name('destroy');  
@@ -114,7 +114,7 @@ Route::group(['middleware' => ['auth'] ], function() {
         });
         Route::group(['prefix' => 'penulis','as'=>'dashboard.penulis.'], function() {
             Route::get('index','PenulisController@index')->name('index');
-            Route::get('data','PenulisController@data')->name('data');
+            Route::get('datatable','PenulisController@datatable')->name('datatable');
             Route::get('create','PenulisController@create')->name('create');
             Route::get('edit/{id}','PenulisController@edit')->name('edit');
             Route::delete('delete/{id}','PenulisController@destroy')->name('destroy');  
