@@ -145,10 +145,8 @@ Dokumentasi Jawaban Soal
 
 10 setelah melakukan quick start di instruksi sebelumnya
   
-   -buka halaman login di ' 'http://public_url/login'
-   -login dengan akun berikut
-        email    : super.admin@artcak.com
-        password : bismillah
+   -buka halaman login di 'http://public_url/login'
+   -login dengan akun berikut,  email : super.admin@artcak.com  ,password : bismillah
    -masuk di halaman home
    -Manajemen Buku
       - klik List Buku , di sana ada tombol Add Buku, Edit, dan Hapus 
