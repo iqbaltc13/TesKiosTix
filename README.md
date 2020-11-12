@@ -42,6 +42,7 @@ Dokumentasi Jawaban Soal
 
 4 Struktur Tabel
         CreateKategori: 
+
             create table `kategori` (
                 `id` bigint unsigned not null auto_increment primary key, 
                 `nama` varchar(255) null, 
@@ -50,7 +51,9 @@ Dokumentasi Jawaban Soal
                 `updated_at` datetime null, 
                 `deleted_at` datetime null
             ) default character set utf8mb4 collate 'utf8mb4_unicode_ci'
+
         CreatePenulis: 
+
             create table `penulis` (
                 `id` bigint unsigned not null auto_increment primary key, 
                 `nama` varchar(255) null, 
@@ -59,7 +62,11 @@ Dokumentasi Jawaban Soal
                 `updated_at` datetime null, 
                 `deleted_at` datetime null
             ) default character set utf8mb4 collate 'utf8mb4_unicode_ci'
+
+
         CreateBuku: 
+
+
             create table `buku` (
                 `id` bigint unsigned not null auto_increment primary key, 
                 `judul` varchar(255) null, 
@@ -71,23 +78,37 @@ Dokumentasi Jawaban Soal
                 `updated_at` datetime null, 
                 `deleted_at` datetime null
             ) default character set utf8mb4 collate 'utf8mb4_unicode_ci'
+
+
         CreateBuku: 
+
+
             alter table `buku` 
             add index `buku_penulis_id_kategori_id_index`(`penulis_id`, `kategori_id`)
+
+
         CreateBuku: 
+
+
             alter table `buku` 
             add constraint 
                 `buku_penulis_id_foreign` 
                 foreign key (`penulis_id`) 
                 references `penulis` (`id`) 
                 on delete cascade
+
+
         CreateBuku: 
+
+
             alter table `buku` 
             add constraint 
                 `buku_kategori_id_foreign` 
                 foreign key (`kategori_id`) 
                 references `kategori` (`id`) 
                 on delete cascade
+
+                
 
 5 query data buku by nama penulis 
 
@@ -103,7 +124,7 @@ Dokumentasi Jawaban Soal
 
   -Setelah menjalankan semua quick start di instruksi sebelumnya , masukkan url ini di postman
 
-  'http://<public url>/api/v1/buku/index'
+  'http://public_url>/api/v1/buku/index'
   - klik send
   - data list buku terdapat di atribut data
 
@@ -124,7 +145,7 @@ Dokumentasi Jawaban Soal
 
 10 setelah melakukan quick start di instruksi sebelumnya
   
-   -buka halaman login di ' 'http://<public url>/login'
+   -buka halaman login di ' 'http://public_url/login'
    -login dengan akun berikut
         email    : super.admin@artcak.com
         password : bismillah
