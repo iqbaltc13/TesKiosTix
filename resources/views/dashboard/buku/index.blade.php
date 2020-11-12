@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<div class="uk-card uk-margin" >
+<div class="uk-card uk-margin"  >
     <div class="uk-flex-middle sc-padding sc-padding-medium-ends uk-grid-small" data-uk-grid>
         <div class="uk-flex-1 uk-first-column">
             <h3 class="uk-card-title">&nbsp;&nbsp;&nbsp;List Buku</h3>
@@ -41,6 +41,18 @@
             <div id="sc-dt-buttons"></div>
         </div>
     </div>
+    <div id="alert-elements" >
+        @if(Session::get('success'))
+         
+        <div class="uk-alert-success" data-uk-alert>
+            <a class="uk-alert-close" data-uk-close></a>
+              {{Session::get('success')}}
+        </div>
+          
+
+        @endif
+    </div>
+   
     <hr class="uk-margin-remove">
     <div class="uk-card-body">
         <table id="sc-dt-buttons-table" class="uk-table uk-table-striped dt-responsive datatable">
@@ -118,7 +130,7 @@
                 </div>
                 <div class="uk-modal-footer uk-text-right">
                     <a class="sc-button sc-button-flat sc-button-flat-danger uk-modal-close" href="#" >No</a>
-                    <a href="#" @click="delete"  class="sc-button sc-button-secondary uk-modal-close" >Yes</a>
+                    <a href="#" onclick="submitDelete()"  class="sc-button sc-button-secondary uk-modal-close" >Yes</a>
                 </div>
             </div>
         </div>
@@ -136,6 +148,15 @@
         
         alertSuccess('Sukses memuat data');
     }, 60000);
+    function submitDelete(){
+        document.getElementById("delete-form").submit();
+        document.getElementById('delete-form').action = null;
+        document.getElementById('input-hidden-csrf-token').value=null;
+
+        let arrParse= [];
+        datatableWithParse(arrParse);
+        alertSuccess('Sukses menghapus data');
+    }
     function alertSuccess(message) {
         
         let alert = '<div class="uk-alert-success uk-alert" data-uk-alert="">'+
@@ -318,6 +339,7 @@
                 delete:function(){
                     document.getElementById("delete-form").submit();
                     document.getElementById('delete-form').action = null;
+                   
                     document.getElementById('input-hidden-csrf-token').value=null;
                 },
 

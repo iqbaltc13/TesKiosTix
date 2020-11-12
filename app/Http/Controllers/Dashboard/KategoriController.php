@@ -30,7 +30,9 @@ class KategoriController extends Controller
         ];
     }
     public function index(){
-        $arrReturn=[];
+        $arrReturn=[
+            'sidebar'      => 'modul', 
+        ];
         return view($this->view.'index',$arrReturn);
     }
     public function datatable(Request $request){
@@ -50,6 +52,7 @@ class KategoriController extends Controller
                       ->where('id',$id)->first();
         $arrReturn  = [
             'data' =>$data,
+            'sidebar'      => 'modul', 
         ];
         return view($this->view.'edit',$arrReturn);
     }
@@ -69,6 +72,7 @@ class KategoriController extends Controller
     }
     public function create(Request $request){
         $arrReturn  = [
+            'sidebar'      => 'modul', 
         ];
                 
         return view($this->view.'create',$arrReturn);
@@ -115,6 +119,7 @@ class KategoriController extends Controller
                       ->where('id',$id)->first();
         $arrReturn  = [
             'data' =>$data,
+            'sidebar'      => 'modul', 
         ];
         return view($this->view.'detail',$arrReturn);
 

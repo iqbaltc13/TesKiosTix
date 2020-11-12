@@ -11,10 +11,10 @@
                     <h3 class="uk-card-title">
                        Edit Kategori
                     </h3>
-                    <div class="uk-width-auto@s" style="padding-left:446px;">
+                    <div class="uk-width-auto@s" >
                         <div id="sc-dt-buttons">
                             <div class="dt-buttons">
-                                <a class="dt-button buttons-copy buttons-html5 sc-button" href="{{route('dashboard.kategori.index')}}" ><span data-uk-icon="icon: menu"></span> <span>List Kategori</span></a>
+                                {{-- <a class="dt-button buttons-copy buttons-html5 sc-button" href="{{route('dashboard.kategori.index')}}" ><span data-uk-icon="icon: menu"></span> <span>List Kategori</span></a> --}}
                                 
                                 
                             </div>

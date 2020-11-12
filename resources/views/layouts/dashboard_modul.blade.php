@@ -39,14 +39,11 @@
 				<span style="color:white;">{{ env('APP_NAME','Laravel') }}</span>
 			</div>
 		</div>
-		{{-- <div class="nav-overlay nav-overlay-small uk-navbar-right uk-flex-1" hidden>
-			<a class="uk-navbar-toggle uk-visible@m" data-uk-toggle="target: .nav-overlay; animation: uk-animation-slide-top" href="#"><i class="mdi mdi-close sc-icon-24"></i></a>
-			<a class="uk-navbar-toggle uk-hidden@m uk-padding-remove-left" data-uk-toggle="target: .nav-overlay-small; animation: uk-animation-slide-top" href="#"><i class="mdi mdi-close sc-icon-24"></i></a>
-		</div> --}}
+	
 		
 		<div class="nav-overlay nav-overlay-small uk-navbar-right">
 			<ul class="uk-navbar-nav">
-				<li>
+				{{-- <li>
 					<a href="https://scutum-html.tzdthemes.com/layout-top_menu.html#">
 						@if(!empty($sidebar) )
 							@if($sidebar == 'beranda')
@@ -122,7 +119,7 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 				<li class="uk-visible@s">
 					<a href="#">
 						<span class="mdi mdi-bell uk-display-inline-block">

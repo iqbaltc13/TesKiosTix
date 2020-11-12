@@ -14,5 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->call(BasicAuthenticationsSeeder::class);
         $this->call(FileTypesSeeder::class);
         $this->call(ConfirmationTypeSeeder::class);
+        $this->call(KategoriSeeder::class);
+        $this->call(PenulisSeeder::class);
+        $this->call(BukuSeeder::class);
     }
 }

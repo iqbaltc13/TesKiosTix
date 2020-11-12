@@ -36,6 +36,7 @@ class BukuController extends Controller
         $arrReturn=[
             'dataPenulis'  => $dataPenulis,
             'dataKategori' => $dataKategori,
+            'sidebar'      => 'modul', 
         ];
         return view($this->view.'index',$arrReturn);
     }
@@ -67,6 +68,7 @@ class BukuController extends Controller
             'data' =>$data,
             'dataPenulis'  => $dataPenulis,
             'dataKategori' => $dataKategori,
+            'sidebar'      => 'modul', 
         ];
         return view($this->view.'edit',$arrReturn);
     }
@@ -97,6 +99,7 @@ class BukuController extends Controller
         $arrReturn=[
             'dataPenulis'  => $dataPenulis,
             'dataKategori' => $dataKategori,
+            'sidebar'      => 'modul', 
         ];
                 
         return view($this->view.'create',$arrReturn);
@@ -147,6 +150,7 @@ class BukuController extends Controller
                       ->where('id',$id)->first();
         $arrReturn  = [
             'data' =>$data,
+            'sidebar'      => 'modul', 
         ];
         return view($this->view.'detail',$arrReturn);
 

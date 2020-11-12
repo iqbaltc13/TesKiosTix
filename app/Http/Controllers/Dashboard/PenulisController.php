@@ -30,7 +30,9 @@ class PenulisController extends Controller
         ];
     }
     public function index(){
-        $arrReturn=[];
+        $arrReturn=[
+            'sidebar'      => 'modul', 
+        ];
         return view($this->view.'index',$arrReturn);
     }
     public function datatable(Request $request){
@@ -54,6 +56,7 @@ class PenulisController extends Controller
             'data' =>$data,
             'dataKategori' => $dataKategori,
             'dataPenulis'  => $dataPenulis,
+            'sidebar'      => 'modul', 
         ];
         return view($this->view.'edit',$arrReturn);
     }
@@ -77,6 +80,7 @@ class PenulisController extends Controller
         $arrReturn  = [
             'dataKategori' => $dataKategori,
             'dataPenulis'  => $dataPenulis,
+            'sidebar'      => 'modul', 
         ];
                 
         return view($this->view.'create',$arrReturn);
@@ -123,6 +127,7 @@ class PenulisController extends Controller
                       ->where('id',$id)->first();
         $arrReturn  = [
             'data' =>$data,
+            'sidebar'      => 'modul', 
         ];
         return view($this->view.'detail',$arrReturn);
 

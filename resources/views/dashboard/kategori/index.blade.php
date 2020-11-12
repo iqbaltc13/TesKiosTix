@@ -30,6 +30,17 @@
             <div id="sc-dt-buttons"></div>
         </div>
     </div>
+    <div id="alert-elements" >
+        @if(Session::get('success'))
+         
+        <div class="uk-alert-success" data-uk-alert>
+            <a class="uk-alert-close" data-uk-close></a>
+              {{Session::get('success')}}
+        </div>
+          
+
+        @endif
+    </div>
     <hr class="uk-margin-remove">
     <div class="uk-card-body">
         <table id="sc-dt-buttons-table" class="uk-table uk-table-striped dt-responsive datatable">
@@ -92,7 +103,7 @@
                 </div>
                 <div class="uk-modal-footer uk-text-right">
                     <a class="sc-button sc-button-flat sc-button-flat-danger uk-modal-close" href="#" >No</a>
-                    <a href="#" @click="delete"  class="sc-button sc-button-secondary uk-modal-close" >Yes</a>
+                    <a href="#" onclick="submitDelete()"  class="sc-button sc-button-secondary uk-modal-close" >Yes</a>
                 </div>
             </div>
         </div>
@@ -110,6 +121,16 @@
         
         alertSuccess('Sukses memuat data');
     }, 60000);
+
+    function submitDelete(){
+        document.getElementById("delete-form").submit();
+        document.getElementById('delete-form').action = null;
+        document.getElementById('input-hidden-csrf-token').value=null;
+
+        let arrParse= [];
+        datatableWithParse(arrParse);
+        alertSuccess('Sukses menghapus data');
+    }
 
     function datatableWithParse(arrParse){
         var url = "{{route('dashboard.kategori.datatable')}}";

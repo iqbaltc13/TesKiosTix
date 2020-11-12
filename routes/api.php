@@ -39,4 +39,9 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function() {
     });
 
     Route::post('upload-image', "UploadFileController@uploadFile")->middleware('auth:api');
+
+    Route::group(['prefix' => 'buku'], function() {
+        Route::post('index', 'BukuController@index');
+       
+    });
 });
